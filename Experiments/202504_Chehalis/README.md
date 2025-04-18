@@ -5,7 +5,9 @@
 * There were problems with pushers: They could not make it past the signal, because the passing cars at the front of the train would switch the signal to red, and stop the train. It wwas necessary to disable the stopping track to get things to work. As a potential fix, Magnus proposed to of put the presence detector further back. Another option could be to trigger the transistion to red by the end of the train, rather than the front. I seem to remember that we reached the same conclusion when we ran with a CS2-controlled signal in Tacoma.
 * In light of the previous point, each stopping track needs an easy (switched) override for each of the three loops, for cases where there has been an oversight. This override could contain of physical switches, or a high-reliablity electronic control.
 * The matter of running right-handed or left-handed was discussed several times, without a firm conclusion. We may be in analysis paralysis.
-* How do we attach signal masts to Precision Board, so that it fails in a controlled manner? I.e. you want the thing that breaks to be cheap and easy to replace. Bonus points for having a storage position, where the signal could be mechanically fixed during transport.
+
+## Turnout control
+* Installed a CANSOL module to control two of the turnouts on the station module. This only happened on Sunday, so there was not a lot of time for experimentation. It appeared to work reliably. 
 
 ## CBUS
 * Reliability of the CBUS nodes was good, no hangs or crashes.
@@ -18,7 +20,8 @@
 
 ## Other items discussed
 * Discussions: Jan proposed to put a crossover from the inner to the outer loop, and back. After some discussion we concluded that it is not a great idea: There is not a lot of added value in terms of operational interest, but a lot of potential for problems and accidents. Maybe a spur would be more useful.
+* How do we attach signal masts to Precision Board, so that it fails in a controlled manner? I.e. you want the thing that breaks to be cheap and easy to replace. Bonus points for having a storage position, where the signal could be mechanically fixed during transport.
 
 ## Next steps
-* Try to drive each Block signal from a single bit, using bistable relais. Similarly, two bits should be sufficient for 3-aspect entry signal.
+* Try to drive each Block signal from a single bit, using bistable relais. Similarly, two bits should be sufficient for 3-aspect entry signal. This should allow to control all the signals and presence detectors using a single CANVOUT node.
 * Conclude the direction of travel discussion.
